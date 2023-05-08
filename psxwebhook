@@ -46,7 +46,7 @@ local function sendUpdate(currentAmount, totalAmount, deltaAmount, totalTime)
                 ["inline"] = true
             },
             {
-                ["name"] = "Last 10 minutes",
+                ["name"] = "Last 60 minutes",
                 ["value"] = formatNumber(deltaAmount),
                 ["inline"] = true
             }
@@ -90,5 +90,3 @@ while true do
     totalTime = totalTime + (updateDelay / 60)
     sendUpdate(currentAmount, totalAmount, last10MinAmount, totalTime)
 end
-
-

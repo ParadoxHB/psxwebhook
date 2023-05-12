@@ -63,7 +63,7 @@ local function sendUpdate(currentAmount, totalAmount, deltaAmount, totalTime)
 			['Content-Type'] = 'application/json';
 		};
 		Body = game:GetService('HttpService'):JSONEncode({
-			username = "Gem Tracker", 
+			username = "Cynx's Gem Tracker", 
 			avatar_url = 'https://i.imgur.com/FLnAlah.png',
 			embeds = {embed} 
 		})

@@ -64,7 +64,7 @@ local function sendUpdate(currentAmount, totalAmount, deltaAmount, totalTime)
 		};
 		Body = game:GetService('HttpService'):JSONEncode({
 			username = "Gem Tracker", 
-			avatar_url = 'https://i.imgur.com/5b6NmEo.png',
+			avatar_url = 'https://i.imgur.com/FLnAlah.png',
 			embeds = {embed} 
 		})
 	}

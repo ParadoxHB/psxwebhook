@@ -6,7 +6,7 @@ local webhook = "https://discord.com/api/webhooks/1099749184195796992/KZcGmBO3q3
 local currencyName = "Diamonds"
 
 -- The delay between updates (in seconds)
-local updateDelay = 1200 -- (20 minutes = 1200)
+local updateDelay = 3600 -- (60 minutes = 3600) -- 1200 = 20 minutes -- 600 = 10 minutes
 
 -- Get the player's user ID
 local playerId = game.Players.LocalPlayer.UserId
@@ -46,7 +46,7 @@ local function sendUpdate(currentAmount, totalAmount, deltaAmount, totalTime)
                 ["inline"] = true
             },
             {
-                ["name"] = "Last 20 minutes",
+                ["name"] = "Last 60 minutes",
                 ["value"] = formatNumber(deltaAmount),
                 ["inline"] = true
             }

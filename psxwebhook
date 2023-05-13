@@ -15,7 +15,7 @@ local timei = os.date(format, unixtime)
 local username = tostring(game.Players.localPlayer.Name)
 
 
-local updateDelay = 180 -- (60 minutes = 3600) -- 1200 = 20 minutes -- 600 = 10 minutes
+local updateDelay = 600 -- (60 minutes = 3600) -- 1200 = 20 minutes -- 600 = 10 minutes
 
 -- Load the library
 local Library = require(game.ReplicatedStorage.Library)

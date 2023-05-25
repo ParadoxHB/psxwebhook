@@ -2,18 +2,16 @@ if not game:IsLoaded() then game.Loaded:Wait() end
 local webhook = "https://discord.com/api/webhooks/1099749184195796992/KZcGmBO3q38ql5LEjSdXnJF5wF6Ob-5uvch0GeDc7b8HaCTNy1nb2R63n0uDci5bTAwD"
 
 -- The name of the currency you want to track
--- Diamonds, Coins, Fantasy Coins, Tech Coins, Rainbow Coins, Cartoon Coins
--- Or event Currencies: Clover Coins, Gingerbread, Halloween Candy, Valentine Hearts
+-- Gems, Coins, Fantasy Coins, Tech Coins, Rainbow Coins, Cartoon Coins
+-- Or event Currencies: Clover Coins, Gingerbread, Halloween Candy, Valentine Hearts, Lucky Blocks.
 
-local currencyName = "Diamonds"
+local currencyName = "Gems"
 
 local plr = game:GetService("Players"):GetPlayerFromCharacter(script.Parent)
 local JobID = tostring(game.JobId)
 local unixtime = os.time()
-local format = "%H:%M:%S | %a, %d %b %Y"
 local timei = os.date(format, unixtime)
 local username = tostring(game.Players.localPlayer.Name)
-
 
 local updateDelay = 600 -- (60 minutes = 3600) -- 1200 = 20 minutes -- 600 = 10 minutes
 
@@ -38,34 +36,34 @@ end
 -- Function to send an update to the webhook
 local function sendUpdate(currentAmount, totalAmount, deltaAmount, totalTime)
     local embed = {
-        ["title"] = "Currency Update",
-        ["color"] = tonumber("0x00FF00", 16), -- Green
+        ["title"] = "Gem Update",
+        ["color"] = tonumber("58B9FF", 16), -- Green
         ["fields"] = {
             {
-                ["name"] = "Current "..currencyName,
+                ["name"] = "Current "..currencyName.." 💎",
                 ["value"] = formatNumber(currentAmount),
                 ["inline"] = false
             },
             {
-                ["name"] = "Total "..currencyName.." Earned",
+                ["name"] = "💎 "..currencyName.." Earned ",
                 ["value"] = formatNumber(totalAmount).." / "..formatNumber(totalTime).." minutes",
                 ["inline"] = true
             },
             {
-                ["name"] = "Last 10 minutes",
+                ["name"] = "Last 10 minutes 🕐",
                 ["value"] = formatNumber(deltaAmount),
                 ["inline"] = true
             },
             {
-                ["name"] = "Username",
+                ["name"] = "Account: ",
                 ["value"] = username,
                 ["inline"] = false
             },
             {
-                ["name"] = "JobID",
+                ["name"] = "Server JobID",
                 ["value"] = "```"..JobID.."```",
                 ["inline"] = false
-            }
+            },
         },
         ["footer"] = {text = timei}
 		}
@@ -78,7 +76,6 @@ local function sendUpdate(currentAmount, totalAmount, deltaAmount, totalTime)
 		};
 		Body = game:GetService('HttpService'):JSONEncode({
 			username = "Cynx's Gem Tracker", 
-			avatar_url = 'https://i.imgur.com/FLnAlah.png',
 			embeds = {embed} 
 		})
 	}

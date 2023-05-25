@@ -2,10 +2,10 @@ if not game:IsLoaded() then game.Loaded:Wait() end
 local webhook = "https://discord.com/api/webhooks/1099749184195796992/KZcGmBO3q38ql5LEjSdXnJF5wF6Ob-5uvch0GeDc7b8HaCTNy1nb2R63n0uDci5bTAwD"
 
 -- The name of the currency you want to track
--- Gems, Coins, Fantasy Coins, Tech Coins, Rainbow Coins, Cartoon Coins
+-- Diamonds, Coins, Fantasy Coins, Tech Coins, Rainbow Coins, Cartoon Coins
 -- Or event Currencies: Clover Coins, Gingerbread, Halloween Candy, Valentine Hearts, Lucky Blocks.
 
-local currencyName = "Gems"
+local currencyName = "Diamonds"
 
 local plr = game:GetService("Players"):GetPlayerFromCharacter(script.Parent)
 local JobID = tostring(game.JobId)
@@ -13,7 +13,7 @@ local unixtime = os.time()
 local timei = os.date(format, unixtime)
 local username = tostring(game.Players.localPlayer.Name)
 
-local updateDelay = 600 -- (60 minutes = 3600) -- 1200 = 20 minutes -- 600 = 10 minutes
+local updateDelay = 10 -- (60 minutes = 3600) -- 1200 = 20 minutes -- 600 = 10 minutes
 
 -- Load the library
 local Library = require(game.ReplicatedStorage.Library)
